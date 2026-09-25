@@ -62,6 +62,13 @@ pub enum ContractError {
     StandardAlreadyRegistered = 36,
     /// Engineer has exceeded the configured max_submissions_per_hour rate limit.
     RateLimitExceeded = 37,
+    /// Bulk engineer authorization revocation exceeds the maximum allowed batch size.
+    BatchRevokeTooLarge = 38,
+    /// The admins list supplied to set_admin_quorum exceeds the maximum allowed size (10).
+    TooManyAdmins = 39,
+    /// Insufficient fee provided for the maintenance submission priority level (#1313).
+    InsufficientFee = 40,
+    ConflictOfInterest = 41,
 }
 
 impl From<SharedContractError> for ContractError {
